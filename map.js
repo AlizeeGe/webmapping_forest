@@ -35,7 +35,6 @@ legend_lvl3.onAdd = function (maplvl3) {
     '<style>#leg_map_lvl3 {width: 100%; display: block; padding: 5px; border-radius: 5px;}</style>' + // Adjusted the styles
     '<style>#legend-content3 {font-size: 9.5px; width: 200px; display: block; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border-radius: 5px;}</style>'
   );
-  );
   return divlegend;
 };
 legend_lvl3.addTo(maplvl3);
