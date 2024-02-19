@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Forest lvl 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="titre">UE 902 - 01 ~ Webmapping ~ M2 SIGMA</div>
+    <div id="sous-titre">Codée par Alizée Germain</div>
+    <div id="box">
+        <div id="texte">Dans le cadre de l'UE 901 - 22 ~ Projet Télédétection Approfondissement du M2 SIGMA, nous avons 
+            produit des cartes d'essences forestières à partir de la BDForêt_V2.0 et d'un modèle basé sur le Random Forest
+            Classifier. Notre cas d’étude se focalise sur la commune de Toulouse et ses alentours comme le montre la figure 1
+            ci-dessous.
+        </div>
+        <div class="image-container">
+            <figure>
+                <a href="images/zone_etude.png" data-lightbox="image-set">
+                    <img src="images/zone_etude.png" alt="zone">
+                    <figcaption>Figure 1 : Carte de la zone d'étude et des classes brutes de la BD Forêt.</figcaption>
+                </a>
+            </figure>
+        </div>
+        <div id="texte">
+            Les classes de la BD Forêt représentée ci-dessus ont été reclassées en trois niveau suivant le schéma de la figure 2.
+        </div>
+        <div class="image-container">
+            <figure>
+                <a href="images/niveau_classif.png" data-lightbox="image-set">
+                    <img src="images/niveau_classif.png" alt="nomenclature">
+                    <figcaption>Figure 2 : Tableau de correspondance entre les niveaux de reclassification et les classes de la BD Forêt.</figcaption>
+                </a>
+            </figure>
+        </div>
+    </div>
+    <div id="box">
+        <div id="texte">
+            Nous présenterons ici seulement les résultats concernant la classification effectuée sur le niveau 3.
+        </div>
+        <h3 style="text-align: center; margin-top: 3%">Carte obtenue par un modèle de classification Random Forest suivant le niveau 3 de la nomenclature</h3>
+        <div id="map-container">
+            <div id="maplvl3" class="mapping"></div>
+        </div>
+    </div>
+    <div id="box">
+        <div class="image-container">
+            <div class="row">
+                <div class="column">
+                    <a href="images/matrice_confusion.png" data-lightbox="image-set">
+                        <img src="images/matrice_confusion.png" alt="modele">
+                        <figcaption>Figure 3 : Matrice de confusion du modèle de niveau 3.</figcaption>
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="images/diag_quality.png" data-lightbox="image-set ">
+                        <img src="images/diag_quality.png" alt="quality">
+                        <figcaption>Figure 4 : Diagramme de qualité du modèle de niveau 3.</figcaption>
+                    </a>
+                </div>
+            </div> 
+        </div> 
+        <div id="texte">
+            <p>A l’échelle globale, l’indice overall accuracy de 0.36 (Figure 4) démontre la performance médiocre
+            de la classification. La matrice de confusion (Figure 3) montre une meilleure performance sur la
+            classification de la classe 102 « Chêne pur » avec une fort nombre de pixels correctement classés. Les
+            classes « Autres feuillus pur» et « Pin laricio ou pin noir pur» ont des performances beaucoup plus faibles : inférieur
+            à 20 ; quant aux autres classes (« Robinier pur»,« Mélange de feuillus»,« Peupleraie»,« Autres conifères purs autre que pin »,
+            « Douglas pur», « Mélange de conifères autres que pin », « Autre Pin pur», « Mélange Pins» et « Mélange Pins et autres conifères »), le
+            F1-score est très faible : inférieur à 10.</p>
+            <p>Notons que la classe 102 est régulièrement confondus avec les classes 103, 104 et 110, ce qui peut
+            s'expliquer facilement par le fait que ce sont toutes des classes de feuillus et ainsi que les
+            ressemblances sont importantes. La principale confusion se fait entre la classe 102 « Chênes purs» et la
+            classe 104 « Mélange de feuillus ». Nous pouvons observer plus de pixels appartenant à la classe 102 prédits
+            dans la classe 104 que de pixels de la classe 104 prédits correctement (36 000 pour seulement 9 700).</p>
+        </div>
+    </div>
+    <div id="conclu">
+        Réalisée par Alizée Germain, dans le cadre de la spécialité AgroGéomatique de l'ENSAT et du M2 SIGMA ~ 2023-2024
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet-fullscreen/dist/Leaflet.fullscreen.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen/dist/leaflet.fullscreen.css" />
+    <script src="map.js"></script>
+</body>
+</html>

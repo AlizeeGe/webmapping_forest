@@ -1,0 +1,90 @@
+html, body {
+    background-color: rgb(201, 215, 201);
+    height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+#titre {
+    text-align: center;
+    margin-bottom: 1%;
+    font-size: 50px;
+    font-family: cursive;
+    color : rgb(0, 0, 0)
+}
+
+#sous-titre {
+    text-align: center;
+    margin-bottom: 1%;
+    font-size: 20px;
+    font-family: italic;
+    color : rgb(0, 0, 0)
+}
+    
+#box {
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 15px; 
+    background-color: rgba(234, 234, 234, 0.9);
+    margin-bottom: 5%;
+}
+
+#texte {
+    text-align: justify;
+    margin-bottom: 10px;
+    text-indent: 2%;
+}
+
+#conclu {
+    text-align: center;
+    font-size: 8px;
+    font-style: italic;
+}
+
+.image-container {
+    margin: 0 auto; 
+    text-align: center; 
+    overflow: hidden;
+  }
+
+.image-container img {
+    max-width: 60%;
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+  }
+
+.image-container figcaption {
+  font-size: 12px;
+  font-style: italic;
+  }
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+#map-container {
+    display: flex;
+    height: 100vh;
+    margin-bottom: 0 !important;
+}
+
+.mapping {
+    flex: 1;
+    height: 90%;
+    border: 2px solid #000; 
+    margin-right: 2mm;
+}
+  
+.column {
+    float: left;
+    width: 45%;
+    padding: 5px;
+  }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
